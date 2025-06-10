@@ -3,6 +3,12 @@ plugins {
     id 'net.neoforged.moddev.legacyforge'
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
 
