@@ -3,6 +3,12 @@ plugins {
     id 'net.neoforged.moddev.legacyforge'
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 legacyForge {
     mcpVersion = minecraft_version
     if (file("src/main/resources/META-INF/accesstransformer.cfg").exists()) {
@@ -17,7 +23,7 @@ legacyForge {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    implementation "curse.maven:roundabout-the-jojo-mod-1115305:6625505"
+    implementation name: 'roundabout-common-1.20.1-1.3.9'
 }
 
 configurations {
